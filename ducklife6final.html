@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Runner</title>
+<style>
+  body { margin: 0; padding: 0; font-family: monospace; }
+  .container { display: flex; height: 100vh; }
+  .preview { width: 100%; height: 100%; border: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <iframe class="preview" id="preview"></iframe>
+</div>
+<script>
+  async function updatePreview(url) {
+    try {
+      const response = await fetch(url);
+      const content = await response.text();
+      document.getElementById('preview').srcdoc = content;
+    } catch (error) {
+      document.getElementById('preview').srcdoc = '<p>Error loading content.</p>';
+    }
+  }
+
+  window.onload = function() {
+    // Replace with your actual jsDelivr raw file link
+    var defaultUrl = 'https://cdn.jsdelivr.net/gh/vihaanb0715-alt/unpkg-games@main/ducklife6.html';
+    updatePreview(defaultUrl);
+  };
+</script>
+</body>
+</html>
