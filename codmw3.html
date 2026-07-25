@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <title>COD Modern Warfare 3 - Unbanned Cave</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style> 
+    /* Force the browser window to be exactly full screen */
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Prevents unwanted scrollbars */
+    } 
+    /* Force the game wrapper to occupy all available space */
+    #game-container {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style> 
+</head> 
+<body> 
+
+  <!-- Simple wrapper to anchor the 100% size -->
+  <div id="game-container">
+    <div id="game"></div> 
+  </div> 
+
+  <script> 
+    EJS_player = "#game"; 
+    EJS_core = "nds"; 
+    EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/"; 
+    EJS_gameUrl = "https://www.dl.dropboxusercontent.com/scl/fi/x3p7atj8fm77xzs4p0zfw/cod.nds?rlkey=hank10tqn3wxzpwp9bgwar7tg"; 
+  </script> 
+  <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script> 
+</body> 
+</html>
