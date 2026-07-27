@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ruffle Flash Game</title>
+    <style>
+        /* Make the page take up the entire screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #111;
+        }
+        /* Make the game container fill the full screen width and height */
+        #player-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+        }
+        /* Make the Ruffle player fill its container */
+        #player-container ruffle-player {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <!-- Load the Ruffle player library from the CDN -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+
+    <!-- The target container where your game will display -->
+    <div id="player-container"></div>
+
+    <script>
+        // Initialize Ruffle once the webpage finishes loading
+        window.addEventListener("DOMContentLoaded", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            
+            // Append the newly created Ruffle player inside our container
+            const container = document.getElementById("player-container");
+            container.appendChild(player);
+            
+            // Load your specific SWF file
+            player.load({
+                url: "https://unpkg.com/@vbansal67/run@1.0.0/run_1.swf",
+                allowScriptAccess: true
+            });
+        });
+    </script>
+
+</body>
+</html>
